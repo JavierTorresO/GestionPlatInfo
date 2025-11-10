@@ -1,0 +1,36 @@
+<!-- templates/comprar.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>PetMarket - Comprar</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Comprar producto</h1>
+
+    {% if result %}
+      {% if result[0] == "OK" %}
+        <div class="ok">Compra registrada. ID: {{ result[1]['compra_id'] }}</div>
+      {% else %}
+        <div class="error">Error: {{ result[1] }}</div>
+      {% endif %}
+    {% endif %}
+
+    <form method="post">
+      <label>Producto:</label>
+      <select name="producto_id">
+        {% for p in productos %}
+          <option value="{{p.id}}">{{p.nombre}} (stock: {{p.stock}})</option>
+        {% endfor %}
+      </select>
+      <label>Cantidad:</label>
+      <input type="number" name="cantidad" value="1" min="1" />
+      <button type="submit">Comprar</button>
+    </form>
+
+    <p><a href="/productos">Ver productos</a> | <a href="/">Inicio</a></p>
+  </div>
+</body>
+</html>

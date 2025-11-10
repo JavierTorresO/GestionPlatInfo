@@ -1,0 +1,28 @@
+<!-- templates/productos.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>PetMarket - Productos</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Productos</h1>
+    <table>
+      <thead><tr><th>ID</th><th>Nombre</th><th>Precio</th><th>Stock</th></tr></thead>
+      <tbody>
+      {% for p in productos %}
+        <tr>
+          <td>{{ p.id }}</td>
+          <td>{{ p.nombre }}</td>
+          <td>{{ "%.2f"|format(p.precio) }}</td>
+          <td>{{ p.stock }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <p><a href="/">Volver</a></p>
+  </div>
+</body>
+</html>
