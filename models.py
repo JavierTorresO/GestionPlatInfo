@@ -5,7 +5,8 @@ from database import get_conn, put_conn
 def list_products():
     conn = get_conn()
     cur = conn.cursor(cursor_factory=RealDictCursor)
-    cur.execute("SELECT id, nombre, precio, stock FROM productos ORDER BY id;")
+    # Ahora también seleccionamos imagen_url
+    cur.execute("SELECT id, nombre, precio, stock, imagen_url FROM productos ORDER BY id;")
     rows = cur.fetchall()
     cur.close()
     put_conn(conn)
@@ -14,7 +15,8 @@ def list_products():
 def get_product(pid):
     conn = get_conn()
     cur = conn.cursor(cursor_factory=RealDictCursor)
-    cur.execute("SELECT id, nombre, precio, stock FROM productos WHERE id=%s;", (pid,))
+    # También incluye imagen_url aquí
+    cur.execute("SELECT id, nombre, precio, stock, imagen_url FROM productos WHERE id=%s;", (pid,))
     row = cur.fetchone()
     cur.close()
     put_conn(conn)

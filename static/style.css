@@ -1,10 +1,84 @@
 /* static/style.css */
-body { font-family: Arial, sans-serif; background:#f7f7f7; color:#222; }
-.container { max-width:800px; margin:30px auto; background:#fff; padding:20px; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
-table { width:100%; border-collapse:collapse; }
-th,td { padding:8px 6px; border-bottom:1px solid #eee; text-align:left;}
-.ok { background:#e6ffed; color:#056e2b; padding:8px; border-radius:4px; margin-bottom:12px;}
-.error { background:#ffe6e6; color:#8a1a1a; padding:8px; border-radius:4px; margin-bottom:12px;}
-label { display:block; margin-top:8px;}
-input, select { padding:6px; margin-top:4px; }
-button { margin-top:10px; padding:8px 12px; cursor:pointer;}
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9fb;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #2d3436;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+.navbar .logo {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.navbar nav a {
+    color: #f9f9fb;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+.navbar nav a:hover {
+    color: #ffb347;
+}
+
+/* Hero section */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1560807707-8cc77767d783');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    padding: 6rem 2rem;
+    position: relative;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.btn-primary {
+    background-color: #ffb347;
+    color: #333;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+.btn-primary:hover {
+    background-color: #ffd27f;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2d3436;
+    color: #f9f9fb;
+    margin-top: 2rem;
+}
+

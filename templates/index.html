@@ -1,20 +1,30 @@
-<!-- templates/index.html -->
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <title>PetMarket - Inicio</title>
-  <link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Paws - Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <div class="container">
-    <h1>PetMarket</h1>
-    <p>Mini e-commerce de productos para mascotas.</p>
-    <ul>
-      <li><a href="/productos">Ver productos</a></li>
-      <li><a href="/comprar">Comprar (demo)</a></li>
-      <li><a href="/api/productos">API - Productos (JSON)</a></li>
-    </ul>
-  </div>
+    <header class="navbar">
+        <h1 class="logo">🐾Happy Paws</h1>
+        <nav>
+            <a href="{{ url_for('view_productos') }}">Ver Productos</a>
+            <a href="{{ url_for('view_comprar') }}">Comprar</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Todo para tus mascotas, en un solo lugar</h2>
+            <p>Encuentra alimentos, juguetes y accesorios de calidad para tus amigos peludos.</p>
+            <a href="{{ url_for('view_productos') }}" class="btn-primary">Ver catálogo</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Happy Paws — Proyecto de Gestión de plataformas informaticas</p>
+    </footer>
 </body>
 </html>
